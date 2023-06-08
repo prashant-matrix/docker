@@ -9,7 +9,7 @@ sh 'ls -ltr'
 }
   stage ("Build image") {
     steps {
-      sh ' build -t nodejs . '
+      sh ' sudo build -t nodejs . '
     }
   }
   
