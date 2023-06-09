@@ -20,11 +20,12 @@ sh 'ls -ltr'
       sh 'sudo docker push pras001/nodejs:1.0'
     }
   }
-  
-  stage("Deployment to kubernetes") {
-    steps{
-      sh 'sudo docker image tag nodejs pras001/nodejs:1.0'
-      sh 'sudo docker push pras001/nodejs:1.0'
+ 
+     stage ("Deployment to Kubernetes") {
+    steps {
+      sh 'chmod 400 susiminikube.pem'
+      sh 'ssh -i susiminikube.pem ec2-user@15.207.110.156 "kubectl delete pod prashttpd01"'
+      sh 'ssh -i susiminikube.pem ec2-user@15.207.110.156 "kubectl run susihttpd01 --image=susigugh/httpdimg:v1.1"'
     }
   }
   
