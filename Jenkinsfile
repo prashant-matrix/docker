@@ -25,7 +25,7 @@ sh 'ls -ltr'
     steps {
       sh 'chmod 400 susiminikube.pem'
      
-      sh 'ssh -i susiminikube.pem ec2-user@15.207.110.156 "kubectl run susihttpd01 --image=susigugh/httpdimg:v1.1"'
+      sh 'ssh -i susiminikube.pem ec2-user@15.207.110.156 "kubectl run prashttpd01 --image=susigugh/httpdimg:v1.1"'
     }
   }
   
