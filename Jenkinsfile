@@ -21,6 +21,13 @@ sh 'ls -ltr'
     }
   }
   
+  stage("Deployment to kubernetes") {
+    steps{
+      sh 'sudo docker image tag nodejs pras001/nodejs:1.0'
+      sh 'sudo docker push pras001/nodejs:1.0'
+    }
+  }
+  
 }
 }
 
