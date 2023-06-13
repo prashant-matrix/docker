@@ -6,7 +6,7 @@ stage ("List Files") {
   steps {
 sh 'pwd'
 sh 'ls -ltr'
-sh 'cd  ~/terraform && terraform plan'
+sh 'terraform plan'
   }
 }
 
