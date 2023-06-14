@@ -7,11 +7,11 @@ stage ("List Files") {
 sh 'pwd'
 sh 'ls -ltr'
 sh 'terraform init && terraform plan'
-sh 'terraform apply auto-approve'
+sh 'terraform init && terraform apply auto-approve'
   }
 }
 
-  
+
 
 
 }
